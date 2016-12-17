@@ -1,0 +1,45 @@
+<link rel="import" href="bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="my-login.html">
+<link rel="import" href="my-notes.html">
+
+<dom-module id="my-app">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        font-family: Roboto, sans-serif;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+    </style>
+
+    <!-- IMPORTANT: The firebase-app element needs to appear before any
+         other firebase-* elements -->
+    <firebase-app
+      id="firebase"
+      auth-domain="polymerfire-e7062.firebaseapp.com"
+      database-url="https://polymerfire-e7062.firebaseio.com"
+      api-key="AIzaSyBSm1co5mUyZCYQ1rSvLw0fop1sylLxNwo"
+      messaging-sender-id="66885147842">
+
+    </firebase-app>
+
+    <header>
+      <my-login></my-login>
+    </header>
+
+    <main>
+      <my-notes></my-notes>
+    </main>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-app'
+    });
+  </script>
+
+</dom-module>
